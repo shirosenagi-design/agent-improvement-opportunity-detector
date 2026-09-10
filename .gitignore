@@ -1,0 +1,26 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Local environment variants and generated output
+.env.*
+!.env.example
+*.log
+*.tmp
+.coverage
+htmlcov/
+build/
+dist/
+.DS_Store
+Thumbs.db
+
+# Internal visual design reference; retained locally but not published.
+static/assets/iod/ui_reference.png
+
+# Public demo evidence: exclude local runs by default and allow only canonical runs.
+artifacts/runs/*
+!artifacts/runs/4ba51dc2-5c41-495f-9265-f95950446649.json
+!artifacts/runs/5ac37795-301a-43d5-a6bf-b888f8211bb8.json
+!artifacts/runs/99fabfd1-988f-4700-8cee-fb7caaeb6930.json

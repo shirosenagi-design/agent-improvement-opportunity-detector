@@ -1,0 +1,28 @@
+PROJECT 04 / IOD UI ASSET MAP
+
+ui_reference.png
+  Visual reference only. Do not use as a full-page background.
+
+iod_logo.png
+  Sidebar brand lockup.
+
+iod_mark.png
+  Small brand mark / favicon candidate / compact icon.
+
+hedgehog_work.png
+  Small secondary decorative element near dashboard/header/loading. Do not make it the dominant mascot.
+
+hedgehog_human_review.png
+  Human Review area. This is the primary hedgehog trace: "there is still a human in this work."
+
+same_goal_note.png
+  Optional small handwritten note near the upper secondary area. Decorative only.
+
+better_agents_note.png
+  Optional sidebar/footer handwritten accent. Decorative only.
+
+Implementation rule:
+- Real UI data, controls, cards, dimensions, Evidence, Opportunity and Human Review content remain HTML/CSS/JS.
+- Use images only as brand/decorative assets.
+- Plain / remains neutral charcoal.
+- Coral becomes prominent only after an Opportunity is detected.

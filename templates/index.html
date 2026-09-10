@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Issue Finder</title>
+  <link rel="icon" type="image/png" href="/static/assets/iod/iod_mark.png">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Issue Finder">
+      <a class="brand" href="/" aria-label="Issue Finder dashboard">
+        <img src="/static/assets/iod/iod_logo.png" alt="IOD">
+        <span>Improvement Opportunity Detector</span>
+      </a>
+
+      <nav class="sidebar-nav" aria-label="Dashboard sections">
+        <a class="active" href="#dashboard">
+          <span class="nav-glyph" aria-hidden="true">⌂</span>
+          <span>Dashboard</span>
+        </a>
+        <a href="#status">
+          <span class="nav-glyph" aria-hidden="true">↻</span>
+          <span>Evaluation</span>
+        </a>
+        <a href="#results">
+          <span class="nav-glyph" aria-hidden="true">⌕</span>
+          <span>Evidence</span>
+        </a>
+        <a href="#results">
+          <span class="nav-glyph" aria-hidden="true">◎</span>
+          <span>Human Review</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <img
+          class="better-agents-note"
+          src="/static/assets/iod/better_agents_note.png"
+          alt=""
+          aria-hidden="true"
+        >
+        <p><span>v0.1.0</span> · Evidence first</p>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <main id="dashboard">
+        <header>
+          <img
+            class="mobile-mark"
+            src="/static/assets/iod/iod_mark.png"
+            alt=""
+            aria-hidden="true"
+          >
+          <div class="header-copy">
+            <p class="eyebrow">PROJECT 04 · ISSUE FINDER</p>
+            <h1>Find what your agent update accidentally broke.</h1>
+            <p class="lede">Run the same cases against a baseline and candidate. Surface trade-offs that need human judgment.</p>
+          </div>
+
+          <div class="header-actions">
+            <div class="header-note" aria-hidden="true">
+              <img
+                class="same-goal-note"
+                src="/static/assets/iod/same_goal_note.png"
+                alt=""
+              >
+              <img
+                class="work-hedgehog"
+                src="/static/assets/iod/hedgehog_work.png"
+                alt=""
+              >
+            </div>
+            <button id="run">Run Evaluation</button>
+          </div>
+        </header>
+
+        <section class="config" aria-label="Run configuration">
+          <div>
+            <span>Baseline Agent</span>
+            <strong id="baseline-agent-label">Support Agent — Baseline</strong>
+          </div>
+          <div>
+            <span>Candidate Agent</span>
+            <strong id="candidate-agent-label">Support Agent — Safer Update</strong>
+          </div>
+          <div>
+            <span>Case Suite</span>
+            <strong id="case-suite-label">Case 1 — Safety vs Over-refusal</strong>
+          </div>
+        </section>
+
+        <section id="status" class="status" aria-live="polite">
+          <div>
+            <span>READY</span>
+            <strong>Waiting for an evaluation run.</strong>
+          </div>
+        </section>
+
+        <section id="results" hidden></section>
+      </main>
+
+      <footer>Hard evidence. Human judgment. Better agents.</footer>
+    </div>
+  </div>
+
+  <template id="hedgehog-template">
+    <img
+      class="hedgehog"
+      src="/static/assets/iod/hedgehog_human_review.png"
+      alt=""
+      aria-hidden="true"
+    >
+  </template>
+  <script src="/static/app.js"></script>
+</body>
+</html>

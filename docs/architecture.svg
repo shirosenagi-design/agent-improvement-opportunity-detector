@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">AI Agent Improvement Opportunity Detector architecture</title>
+  <desc id="desc">Browser and FastAPI feed three case execution paths through Strands and provider layers, then deterministic evaluation, UTF-8 artifacts, read-only UI evidence, and a terminal Human Review boundary.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101216"/><stop offset="1" stop-color="#171b21"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#8e99a8"/></marker>
+    <marker id="coralArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ef8f83"/></marker>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,sans-serif;fill:#f4f2ed}.subtitle{font:400 17px Inter,Segoe UI,sans-serif;fill:#aab2bf}.heading{font:700 19px Inter,Segoe UI,sans-serif;fill:#f4f2ed}.body{font:400 14px Inter,Segoe UI,sans-serif;fill:#c8ced7}.small{font:600 12px Inter,Segoe UI,sans-serif;fill:#9ea8b7;letter-spacing:.8px}.box{fill:#1e232b;stroke:#3a424f;stroke-width:2;rx:14}.case{fill:#20262e;stroke:#4a5564;stroke-width:2;rx:12}.tool{fill:#2a2425;stroke:#ef8f83;stroke-width:2;rx:12}.human{fill:#302526;stroke:#ef8f83;stroke-width:3;rx:16}.line{fill:none;stroke:#8e99a8;stroke-width:2.5;marker-end:url(#arrow)}.coral-line{fill:none;stroke:#ef8f83;stroke-width:2.5;marker-end:url(#coralArrow)}.dash{stroke-dasharray:8 7}
+    </style>
+  </defs>
+  <rect width="1600" height="1120" fill="url(#background)"/>
+  <text x="70" y="62" class="title">AI Agent Improvement Opportunity Detector</text>
+  <text x="70" y="94" class="subtitle">Find what your agent update accidentally broke.</text>
+  <rect x="70" y="130" width="360" height="145" class="box"/>
+  <text x="94" y="164" class="small">BROWSER UI</text><text x="94" y="197" class="heading">Developer dashboard</text>
+  <text x="94" y="225" class="body">• Neutral startup</text><text x="94" y="248" class="body">• Case 1 live trigger</text><text x="94" y="271" class="body">• Saved Case 1 / 2 / 3 views</text>
+  <rect x="620" y="130" width="360" height="145" class="box"/>
+  <text x="644" y="164" class="small">FASTAPI</text><text x="644" y="197" class="heading">Application boundary</text>
+  <text x="644" y="225" class="body">• Evaluation + status endpoints</text><text x="644" y="248" class="body">• UUID-constrained read-only artifacts</text><text x="644" y="271" class="body">• Static application delivery</text>
+  <rect x="1170" y="130" width="360" height="145" class="box"/>
+  <text x="1194" y="164" class="small">READ-ONLY RESTORE</text><text x="1194" y="197" class="heading">Saved evidence loop</text>
+  <text x="1194" y="225" class="body">Artifact data returned unchanged</text><text x="1194" y="248" class="body">Case-specific safe DOM rendering</text>
+  <path d="M430 202 H620" class="line"/><path d="M980 202 H1170" class="line"/><path d="M1350 275 V315 H250 V275" class="line dash"/>
+  <rect x="70" y="340" width="1460" height="255" class="box"/>
+  <text x="94" y="375" class="small">RUNNER / CASE EXECUTION — ONE PROVIDER + MODEL SELECTION PER RUN</text>
+  <rect x="100" y="405" width="410" height="155" class="case"/>
+  <text x="124" y="439" class="heading">Case 1</text><text x="124" y="468" class="body">Baseline / Candidate × Probe A / B</text><text x="124" y="494" class="body">Policy safety, helpfulness, autonomy</text><text x="124" y="527" class="small">NO RETRIEVAL TOOL</text>
+  <rect x="595" y="405" width="410" height="155" class="tool"/>
+  <text x="619" y="439" class="heading">Case 2</text><text x="619" y="468" class="body">Baseline / Candidate workflow decision</text><text x="619" y="494" class="body">Query → recorder → exact memory result</text><text x="619" y="527" class="small">STRANDS TOOL-MEDIATED RETRIEVAL</text>
+  <rect x="1090" y="405" width="410" height="155" class="case"/>
+  <text x="1114" y="439" class="heading">Case 3</text><text x="1114" y="468" class="body">Baseline / Candidate × Condition A / B</text><text x="1114" y="494" class="body">Four isolated invocations; same utterance</text><text x="1114" y="527" class="small">TOOLS ABSENT = TRUE</text>
+  <path d="M800 595 V640" class="line"/>
+  <rect x="70" y="640" width="470" height="150" class="box"/>
+  <text x="94" y="674" class="small">STRANDS AGENT LAYER</text><text x="94" y="708" class="heading">Matched agent invocations</text><text x="94" y="738" class="body">Prompts + context + case-scoped tools</text><text x="94" y="763" class="body">Raw responses and runtime provenance</text>
+  <rect x="635" y="640" width="895" height="150" class="box"/>
+  <text x="659" y="674" class="small">PROVIDER + SECURITY LAYER</text><text x="659" y="708" class="heading">OpenAI canonical path</text><text x="659" y="736" class="body">Windows system trust → truststore SSLContext → verified httpx client</text><text x="659" y="764" class="body">Bedrock-compatible path retained via standard AWS credential chain</text>
+  <text x="1225" y="708" class="small">CREDENTIALS</text><text x="1225" y="736" class="body">Process-local only</text><text x="1225" y="762" class="body">Never persisted</text>
+  <path d="M540 715 H635" class="line"/><path d="M800 790 V835" class="line"/>
+  <rect x="70" y="835" width="1010" height="180" class="box"/>
+  <text x="94" y="870" class="small">DETERMINISTIC EVALUATION</text><text x="94" y="904" class="heading">Independent dimensions with traceable Evidence</text><text x="94" y="935" class="body">DimensionResult • Evidence • cross-dimension / cross-condition comparison</text><text x="94" y="964" class="body">Trade-off detector → Opportunity → Human Review recommendation</text><text x="94" y="992" class="body">No aggregate score; improvements cannot average away regressions</text>
+  <rect x="1145" y="835" width="385" height="180" class="box"/>
+  <text x="1169" y="870" class="small">UTF-8 JSON ARTIFACTS</text><text x="1169" y="904" class="heading">Audit-ready run record</text><text x="1169" y="934" class="body">Responses • Evidence • statuses</text><text x="1169" y="962" class="body">Trade-off • Opportunity • review</text><text x="1169" y="990" class="body">Read-only API returns stored values</text>
+  <path d="M1080 925 H1145" class="line"/><path d="M1338 835 V305 H1350" class="line dash"/>
+  <rect x="420" y="1040" width="760" height="58" class="human"/>
+  <text x="800" y="1076" text-anchor="middle" class="heading">Human Review — terminal value-judgment boundary</text>
+  <path d="M800 1015 V1040" class="coral-line"/>
+</svg>

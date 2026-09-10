@@ -1,0 +1,8 @@
+strands-agents[openai]>=1.0.0
+strands-agents-evals>=1.0.0
+fastapi
+uvicorn[standard]
+pydantic>=2
+python-dotenv
+pytest
+truststore>=0.10.4
