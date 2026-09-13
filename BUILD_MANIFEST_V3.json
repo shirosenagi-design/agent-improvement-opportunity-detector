@@ -1,0 +1,20 @@
+{
+  "version": "mbti-v3",
+  "based_on": "project04_rescue_lab_windows_v2.zip",
+  "codex_used": false,
+  "openai_api_calls_during_build": 0,
+  "published": false,
+  "dependencies_changed_from_v2": false,
+  "python_compile_passed": true,
+  "pytest_returncode": 0,
+  "pytest_output": "\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m                                                                [100%]\u001b[0m\n\u001b[32m\u001b[32m\u001b[1m9 passed\u001b[0m\u001b[32m in 0.09s\u001b[0m\u001b[0m",
+  "node_check_passed": true,
+  "node_output": "",
+  "new_behavior": {
+    "cold_start_seed": "self-reported MBTI",
+    "INFJ_counterpart_hypothesis": "ENTP-inspired",
+    "ground_truth_claim": false,
+    "additional_context_optional": true,
+    "human_review_terminal": true
+  }
+}

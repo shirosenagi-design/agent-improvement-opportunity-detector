@@ -1,0 +1,21 @@
+{
+  "version": "v6-research-boundary",
+  "based_on": "project04_rescue_lab_v5_opportunity_mining.zip",
+  "codex_used": false,
+  "openai_api_calls_during_build": 0,
+  "published": false,
+  "dependencies_changed_from_v5": false,
+  "python_compile_passed": true,
+  "pytest_returncode": 0,
+  "pytest_output": "...............                                                          [100%]\n15 passed in 0.07s\n",
+  "node_check_passed": true,
+  "purpose_checks": {
+    "raw_pair_preserved": true,
+    "non_prescriptive_research_boundary": true,
+    "neutral_testable_questions": true,
+    "no_implementation_scope_recommendation": true,
+    "trace_collapsed_by_default": true,
+    "mbti_bootstrap_only": true,
+    "no_length_quality_rule": true
+  }
+}

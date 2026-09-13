@@ -1,0 +1,31 @@
+{
+  "version": "user-model-v4",
+  "based_on": "project04_rescue_lab_mbti_v3.zip",
+  "codex_used": false,
+  "openai_api_calls_during_build": 0,
+  "published": false,
+  "dependencies_changed_from_v3": false,
+  "python_compile_passed": true,
+  "pytest_returncode": 0,
+  "pytest_output": "\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m                                                                [100%]\u001b[0m\n\u001b[32m\u001b[32m\u001b[1m9 passed\u001b[0m\u001b[32m in 0.06s\u001b[0m\u001b[0m",
+  "node_check_passed": true,
+  "node_output": "",
+  "purpose_checks": {
+    "no_fixed_entp_mapping_in_trial": true,
+    "live_user_model_inference_tool": true,
+    "developer_hypotheses_required_in_prompt": true,
+    "human_terminal_boundary_present": true,
+    "ui_has_short_self_intro": true,
+    "ui_has_hypothesis_construction_site": true
+  },
+  "architecture": {
+    "mbti_role": "weak cold-start seed only",
+    "short_self_intro": "stronger person-specific evidence",
+    "high_capability_api_role": "infer provisional user model; generate personalized reasoning; compare semantic trade-offs; construct developer hypotheses",
+    "automatic_model_update": false,
+    "terminal_boundary": "human developer review"
+  },
+  "backward_compatibility": {
+    "personal_context_term_hits_alias_retained": true
+  }
+}

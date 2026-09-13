@@ -1,0 +1,13 @@
+{
+  "artifact": "PROJECT 04 Rescue Lab — Windows V2",
+  "purpose": "standalone live Research Trial vertical slice",
+  "merged_into_main_repo": false,
+  "published": false,
+  "openai_api_calls_during_build": 0,
+  "api_key_stored": false,
+  "offline_python_compile": "PASS",
+  "offline_pytest": "PASS (5 tests)",
+  "javascript_syntax": "PASS",
+  "live_strands_openai_trial_verified": false,
+  "next_gate": "one genuinely new free-form live trial on Neo's Windows machine"
+}

@@ -1,0 +1,20 @@
+{
+  "version": "v5-opportunity-mining",
+  "based_on": "project04_rescue_lab_user_model_v4.zip",
+  "codex_used": false,
+  "openai_api_calls_during_build": 0,
+  "published": false,
+  "dependencies_changed_from_v4": false,
+  "python_compile_passed": true,
+  "pytest_returncode": 0,
+  "pytest_output": ".............                                                            [100%]\n13 passed in 0.10s\n",
+  "node_check_passed": true,
+  "node_output": "",
+  "purpose_checks": {
+    "asymmetric_opportunity_mining": true,
+    "no_length_quality_rule": true,
+    "mbti_bootstrap_only": true,
+    "raw_not_normalized": true,
+    "ui_opportunity_mining": true
+  }
+}

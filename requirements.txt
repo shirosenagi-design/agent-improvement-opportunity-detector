@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic>=2
+strands-agents[openai]
+openai>=2.0.0
+truststore>=0.10
+pytest

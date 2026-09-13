@@ -1,0 +1,11 @@
+{
+  "version": "0.6.2-brand-assets",
+  "base": "V6.1 mascot polish / V6 research boundary",
+  "changes": [
+    "Replaced emoji mascot with the supplied PROJECT 04 / IOD image assets",
+    "Added supplied IOD wordmark to the hero branding row",
+    "Added supplied Better Agents, More Humans mascot artwork to the existing hero-side card",
+    "Added supplied mascot artwork to the loading state and a subtle Same goal signature at the terminal human-review boundary",
+    "No app.js, API, schema, orchestration, model prompt, research logic, or workflow changes"
+  ]
+}

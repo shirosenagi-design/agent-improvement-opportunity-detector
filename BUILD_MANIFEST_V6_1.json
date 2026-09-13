@@ -1,0 +1,9 @@
+{
+  "version": "0.6.1-mascot-polish",
+  "base": "V6 research boundary",
+  "changes": [
+    "Added secondary hedgehog mascot identity to hero",
+    "Added small hedgehog indicator to loading state",
+    "No workflow, schema, agent prompt, or research-boundary changes"
+  ]
+}
