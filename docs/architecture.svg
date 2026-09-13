@@ -1,49 +1,234 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
-  <title id="title">AI Agent Improvement Opportunity Detector architecture</title>
-  <desc id="desc">Browser and FastAPI feed three case execution paths through Strands and provider layers, then deterministic evaluation, UTF-8 artifacts, read-only UI evidence, and a terminal Human Review boundary.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">PROJECT 04 — Agent Improvement Opportunity Detector architecture</title>
+  <desc id="desc">The implemented browser, FastAPI, runner, Strands provider boundary, three evaluation cases, deterministic evidence evaluation, EvaluationRun artifact, read-only restore loop, and terminal Human Review boundary.</desc>
   <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101216"/><stop offset="1" stop-color="#171b21"/></linearGradient>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#8e99a8"/></marker>
-    <marker id="coralArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ef8f83"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1012"/>
+      <stop offset="0.52" stop-color="#111518"/>
+      <stop offset="1" stop-color="#0c0f11"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a1f22"/>
+      <stop offset="1" stop-color="#15191c"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.018" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-12%" y="-18%" width="124%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000000" flood-opacity="0.32"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8.5" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#777d80"/>
+    </marker>
+    <marker id="coral-arrow" markerWidth="10" markerHeight="10" refX="8.5" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#dc7b76"/>
+    </marker>
     <style>
-      .title{font:700 34px Inter,Segoe UI,sans-serif;fill:#f4f2ed}.subtitle{font:400 17px Inter,Segoe UI,sans-serif;fill:#aab2bf}.heading{font:700 19px Inter,Segoe UI,sans-serif;fill:#f4f2ed}.body{font:400 14px Inter,Segoe UI,sans-serif;fill:#c8ced7}.small{font:600 12px Inter,Segoe UI,sans-serif;fill:#9ea8b7;letter-spacing:.8px}.box{fill:#1e232b;stroke:#3a424f;stroke-width:2;rx:14}.case{fill:#20262e;stroke:#4a5564;stroke-width:2;rx:12}.tool{fill:#2a2425;stroke:#ef8f83;stroke-width:2;rx:12}.human{fill:#302526;stroke:#ef8f83;stroke-width:3;rx:16}.line{fill:none;stroke:#8e99a8;stroke-width:2.5;marker-end:url(#arrow)}.coral-line{fill:none;stroke:#ef8f83;stroke-width:2.5;marker-end:url(#coralArrow)}.dash{stroke-dasharray:8 7}
+      .title{font:700 27px Inter,\"Segoe UI\",Arial,sans-serif;letter-spacing:.4px;fill:#f3f1ed}
+      .brand-sub{font:700 11px Inter,\"Segoe UI\",Arial,sans-serif;letter-spacing:3px;fill:#9b9d9e}
+      .tagline{font:500 18px Inter,\"Segoe UI\",Arial,sans-serif;fill:#d8d5d1}
+      .kicker{font:700 10.5px Inter,\"Segoe UI\",Arial,sans-serif;letter-spacing:1.65px;fill:#9c9fa1}
+      .heading{font:700 17px Inter,\"Segoe UI\",Arial,sans-serif;fill:#f1efeb}
+      .body{font:400 12.5px Inter,\"Segoe UI\",Arial,sans-serif;fill:#c2c4c4}
+      .body-strong{font:650 12.5px Inter,\"Segoe UI\",Arial,sans-serif;fill:#e4e1dd}
+      .mono{font:500 11.5px \"Cascadia Mono\",Consolas,monospace;fill:#c7c9c9}
+      .micro{font:600 9.5px Inter,\"Segoe UI\",Arial,sans-serif;letter-spacing:.6px;fill:#888d8f}
+      .coral{fill:#e48882}
+      .card{fill:url(#panel);stroke:#343a3e;stroke-width:1.2;rx:9;filter:url(#shadow)}
+      .card-flat{fill:#171b1e;stroke:#343a3e;stroke-width:1.2;rx:8}
+      .case-card{fill:#171b1e;stroke:#3a4043;stroke-width:1.2;rx:9;filter:url(#shadow)}
+      .discovery{fill:#1c191a;stroke:#8c514f;stroke-width:1.4;rx:9;filter:url(#shadow)}
+      .review{fill:#231c1d;stroke:#dc7b76;stroke-width:1.8;rx:9;filter:url(#shadow)}
+      .artifact{fill:#181c1e;stroke:#4a4f51;stroke-width:1.2;rx:9;filter:url(#shadow)}
+      .rule{stroke:#2e3437;stroke-width:1}
+      .flow{fill:none;stroke:#777d80;stroke-width:1.8;marker-end:url(#arrow)}
+      .flow-plain{fill:none;stroke:#62686b;stroke-width:1.5}
+      .flow-coral{fill:none;stroke:#dc7b76;stroke-width:2;marker-end:url(#coral-arrow)}
+      .feedback{fill:none;stroke:#777d80;stroke-width:1.5;stroke-dasharray:6 6;marker-end:url(#arrow)}
+      .chip{fill:#252a2d;stroke:#41474a;stroke-width:1;rx:12}
+      .chip-coral{fill:#352325;stroke:#a8605d;stroke-width:1;rx:12}
+      .chip-text{font:700 9.5px Inter,\"Segoe UI\",Arial,sans-serif;letter-spacing:.7px;fill:#c9cccc}
+      .chip-text-coral{font:700 9.5px Inter,\"Segoe UI\",Arial,sans-serif;letter-spacing:.7px;fill:#efaaa5}
     </style>
   </defs>
-  <rect width="1600" height="1120" fill="url(#background)"/>
-  <text x="70" y="62" class="title">AI Agent Improvement Opportunity Detector</text>
-  <text x="70" y="94" class="subtitle">Find what your agent update accidentally broke.</text>
-  <rect x="70" y="130" width="360" height="145" class="box"/>
-  <text x="94" y="164" class="small">BROWSER UI</text><text x="94" y="197" class="heading">Developer dashboard</text>
-  <text x="94" y="225" class="body">• Neutral startup</text><text x="94" y="248" class="body">• Case 1 live trigger</text><text x="94" y="271" class="body">• Saved Case 1 / 2 / 3 views</text>
-  <rect x="620" y="130" width="360" height="145" class="box"/>
-  <text x="644" y="164" class="small">FASTAPI</text><text x="644" y="197" class="heading">Application boundary</text>
-  <text x="644" y="225" class="body">• Evaluation + status endpoints</text><text x="644" y="248" class="body">• UUID-constrained read-only artifacts</text><text x="644" y="271" class="body">• Static application delivery</text>
-  <rect x="1170" y="130" width="360" height="145" class="box"/>
-  <text x="1194" y="164" class="small">READ-ONLY RESTORE</text><text x="1194" y="197" class="heading">Saved evidence loop</text>
-  <text x="1194" y="225" class="body">Artifact data returned unchanged</text><text x="1194" y="248" class="body">Case-specific safe DOM rendering</text>
-  <path d="M430 202 H620" class="line"/><path d="M980 202 H1170" class="line"/><path d="M1350 275 V315 H250 V275" class="line dash"/>
-  <rect x="70" y="340" width="1460" height="255" class="box"/>
-  <text x="94" y="375" class="small">RUNNER / CASE EXECUTION — ONE PROVIDER + MODEL SELECTION PER RUN</text>
-  <rect x="100" y="405" width="410" height="155" class="case"/>
-  <text x="124" y="439" class="heading">Case 1</text><text x="124" y="468" class="body">Baseline / Candidate × Probe A / B</text><text x="124" y="494" class="body">Policy safety, helpfulness, autonomy</text><text x="124" y="527" class="small">NO RETRIEVAL TOOL</text>
-  <rect x="595" y="405" width="410" height="155" class="tool"/>
-  <text x="619" y="439" class="heading">Case 2</text><text x="619" y="468" class="body">Baseline / Candidate workflow decision</text><text x="619" y="494" class="body">Query → recorder → exact memory result</text><text x="619" y="527" class="small">STRANDS TOOL-MEDIATED RETRIEVAL</text>
-  <rect x="1090" y="405" width="410" height="155" class="case"/>
-  <text x="1114" y="439" class="heading">Case 3</text><text x="1114" y="468" class="body">Baseline / Candidate × Condition A / B</text><text x="1114" y="494" class="body">Four isolated invocations; same utterance</text><text x="1114" y="527" class="small">TOOLS ABSENT = TRUE</text>
-  <path d="M800 595 V640" class="line"/>
-  <rect x="70" y="640" width="470" height="150" class="box"/>
-  <text x="94" y="674" class="small">STRANDS AGENT LAYER</text><text x="94" y="708" class="heading">Matched agent invocations</text><text x="94" y="738" class="body">Prompts + context + case-scoped tools</text><text x="94" y="763" class="body">Raw responses and runtime provenance</text>
-  <rect x="635" y="640" width="895" height="150" class="box"/>
-  <text x="659" y="674" class="small">PROVIDER + SECURITY LAYER</text><text x="659" y="708" class="heading">OpenAI canonical path</text><text x="659" y="736" class="body">Windows system trust → truststore SSLContext → verified httpx client</text><text x="659" y="764" class="body">Bedrock-compatible path retained via standard AWS credential chain</text>
-  <text x="1225" y="708" class="small">CREDENTIALS</text><text x="1225" y="736" class="body">Process-local only</text><text x="1225" y="762" class="body">Never persisted</text>
-  <path d="M540 715 H635" class="line"/><path d="M800 790 V835" class="line"/>
-  <rect x="70" y="835" width="1010" height="180" class="box"/>
-  <text x="94" y="870" class="small">DETERMINISTIC EVALUATION</text><text x="94" y="904" class="heading">Independent dimensions with traceable Evidence</text><text x="94" y="935" class="body">DimensionResult • Evidence • cross-dimension / cross-condition comparison</text><text x="94" y="964" class="body">Trade-off detector → Opportunity → Human Review recommendation</text><text x="94" y="992" class="body">No aggregate score; improvements cannot average away regressions</text>
-  <rect x="1145" y="835" width="385" height="180" class="box"/>
-  <text x="1169" y="870" class="small">UTF-8 JSON ARTIFACTS</text><text x="1169" y="904" class="heading">Audit-ready run record</text><text x="1169" y="934" class="body">Responses • Evidence • statuses</text><text x="1169" y="962" class="body">Trade-off • Opportunity • review</text><text x="1169" y="990" class="body">Read-only API returns stored values</text>
-  <path d="M1080 925 H1145" class="line"/><path d="M1338 835 V305 H1350" class="line dash"/>
-  <rect x="420" y="1040" width="760" height="58" class="human"/>
-  <text x="800" y="1076" text-anchor="middle" class="heading">Human Review — terminal value-judgment boundary</text>
-  <path d="M800 1015 V1040" class="coral-line"/>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+
+  <!-- Header / brand -->
+  <path d="M48 34H72V42H56V58H48Z" fill="#e8847e"/>
+  <path d="M80 34H88V58H64V50H80Z" fill="#c96d68"/>
+  <text x="104" y="52" class="title">PROJECT 04</text>
+  <text x="104" y="74" class="brand-sub">AGENT IMPROVEMENT OPPORTUNITY DETECTOR</text>
+  <text x="594" y="52" class="tagline">Find what an agent update accidentally broke.</text>
+  <text x="594" y="75" class="body">Evidence first · independent dimensions · human judgment at the boundary</text>
+  <rect x="1330" y="34" width="222" height="30" class="chip-coral"/>
+  <text x="1441" y="53" text-anchor="middle" class="chip-text-coral">CURRENT IMPLEMENTATION</text>
+  <line x1="48" y1="96" x2="1552" y2="96" class="rule"/>
+
+  <!-- Public/runtime entry flow -->
+  <g id="human-entry">
+    <rect x="48" y="118" width="250" height="112" class="card"/>
+    <rect x="48" y="118" width="4" height="112" rx="2" fill="#dc7b76"/>
+    <text x="70" y="142" class="kicker">HUMAN</text>
+    <text x="70" y="167" class="heading">Developer / Reviewer</text>
+    <text x="70" y="190" class="body">Inspect saved evidence</text>
+    <text x="70" y="209" class="body">or start Live Case 1</text>
+  </g>
+
+  <g id="browser-ui">
+    <rect x="340" y="118" width="370" height="112" class="card"/>
+    <text x="362" y="142" class="kicker">BROWSER UI</text>
+    <text x="362" y="167" class="heading">Neutral dashboard + evidence views</text>
+    <text x="362" y="190" class="mono">/  ·  /?run_id=&lt;uuid&gt;</text>
+    <text x="362" y="209" class="body">Case-specific safe DOM rendering</text>
+  </g>
+
+  <g id="fastapi">
+    <rect x="752" y="118" width="370" height="112" class="card"/>
+    <text x="774" y="142" class="kicker">FASTAPI APPLICATION BOUNDARY</text>
+    <text x="774" y="167" class="mono">POST /api/evaluations/run</text>
+    <text x="1044" y="167" text-anchor="end" class="micro">LIVE CASE 1</text>
+    <text x="774" y="190" class="mono">GET /api/evaluations/{run_id}</text>
+    <text x="774" y="209" class="mono">GET /api/artifacts/runs/{run_id}</text>
+  </g>
+
+  <g id="runner">
+    <rect x="1164" y="118" width="388" height="112" class="card"/>
+    <text x="1186" y="142" class="kicker">CORE / RUNNER.PY</text>
+    <text x="1186" y="167" class="heading">Runner / case orchestration</text>
+    <text x="1186" y="190" class="body">One ModelSelection per run</text>
+    <text x="1186" y="209" class="mono">execute_case1 · execute_case2 · execute_case3</text>
+  </g>
+
+  <path d="M298 174H340" class="flow"/>
+  <path d="M710 174H752" class="flow"/>
+  <path d="M1122 174H1164" class="flow"/>
+
+  <!-- Shared Strands/provider boundary -->
+  <g id="execution-boundary">
+    <rect x="48" y="260" width="1504" height="104" class="card"/>
+    <text x="70" y="283" class="kicker">SHARED EXECUTION BOUNDARY</text>
+    <line x1="536" y1="278" x2="536" y2="346" class="rule"/>
+    <line x1="1110" y1="278" x2="1110" y2="346" class="rule"/>
+
+    <text x="70" y="309" class="heading">Strands Agent</text>
+    <text x="70" y="331" class="body">Baseline / Candidate invocations</text>
+    <text x="70" y="348" class="body">Prompt + context + case-scoped tools</text>
+
+    <text x="560" y="309" class="heading">Provider selection</text>
+    <text x="560" y="331" class="body-strong">OpenAIModel</text>
+    <text x="657" y="331" class="body">· truststore SSLContext · verified httpx · max_retries=0</text>
+    <text x="560" y="348" class="body">Bedrock-compatible path retained via the standard AWS credential chain</text>
+
+    <text x="1134" y="309" class="heading">Security boundary</text>
+    <text x="1134" y="331" class="body">OpenAI key is process-local only</text>
+    <text x="1134" y="348" class="body">Provider/model IDs may be persisted; secrets are not</text>
+  </g>
+  <path d="M1358 230V246H800V260" class="flow"/>
+
+  <!-- Case matrix -->
+  <path d="M800 364V384" class="flow-plain"/>
+  <path d="M288 384H1312" class="flow-plain"/>
+  <path d="M288 384V404" class="flow"/>
+  <path d="M800 384V404" class="flow"/>
+  <path d="M1312 384V404" class="flow"/>
+
+  <g id="case-1">
+    <rect x="48" y="404" width="480" height="174" class="case-card"/>
+    <text x="70" y="430" class="kicker">CASE 1 · SAFETY VS OVER-REFUSAL</text>
+    <text x="70" y="456" class="heading">Baseline / Candidate × Probe A / B</text>
+    <text x="70" y="481" class="body">Policy Safety</text>
+    <text x="70" y="502" class="body">Helpfulness</text>
+    <text x="70" y="523" class="body">Appropriate Autonomy / Over-refusal</text>
+    <rect x="70" y="541" width="102" height="22" class="chip"/>
+    <text x="121" y="556" text-anchor="middle" class="chip-text">NO TOOLS</text>
+  </g>
+
+  <g id="case-2">
+    <rect x="560" y="404" width="480" height="174" class="case-card"/>
+    <text x="582" y="430" class="kicker">CASE 2 · MEMORY CAUSALITY</text>
+    <text x="582" y="456" class="heading">Baseline / Candidate workflow decision</text>
+    <text x="582" y="481" class="body">Provenance Integrity / Retrieval Traceability</text>
+    <text x="582" y="502" class="body">Memory Causality</text>
+    <text x="582" y="523" class="body">Legacy context ↔ recorded exact-memory tool execution</text>
+    <rect x="582" y="541" width="184" height="22" class="chip"/>
+    <text x="674" y="556" text-anchor="middle" class="chip-text">STRANDS @TOOL · CANDIDATE</text>
+  </g>
+
+  <g id="case-3">
+    <rect x="1072" y="404" width="480" height="174" class="case-card"/>
+    <text x="1094" y="430" class="kicker">CASE 3 · RELATIONSHIP ADAPTATION</text>
+    <text x="1094" y="456" class="heading">Four isolated invocations · Condition A / B</text>
+    <text x="1094" y="481" class="body">Task Completion / Plan Completeness</text>
+    <text x="1094" y="502" class="body">Human Consideration</text>
+    <text x="1094" y="523" class="body">Relationship-specific Adaptation</text>
+    <rect x="1094" y="541" width="250" height="22" class="chip"/>
+    <text x="1219" y="556" text-anchor="middle" class="chip-text">SAME UTTERANCE · TOOLS_ABSENT = TRUE</text>
+  </g>
+
+  <!-- Evaluation pipeline -->
+  <path d="M288 578V598H1312V578" class="flow-plain"/>
+  <path d="M800 578V598" class="flow-plain"/>
+  <path d="M288 598V620" class="flow"/>
+
+  <g id="deterministic-evaluation">
+    <rect x="48" y="620" width="472" height="136" class="card"/>
+    <text x="70" y="644" class="kicker">CASE-SPECIFIC DETERMINISTIC EVALUATORS</text>
+    <text x="70" y="670" class="heading">Raw responses + runtime provenance</text>
+    <text x="70" y="694" class="body">Independent DimensionResult records</text>
+    <text x="70" y="715" class="body">Traceable Evidence · no model self-grading</text>
+    <text x="70" y="736" class="body">No averaging away a regression</text>
+  </g>
+
+  <g id="shared-comparison">
+    <rect x="548" y="620" width="400" height="136" class="discovery"/>
+    <rect x="548" y="620" width="4" height="136" rx="2" fill="#dc7b76"/>
+    <text x="570" y="644" class="kicker">SHARED COMPARISON</text>
+    <text x="570" y="670" class="heading">Trade-off → Opportunity</text>
+    <text x="570" y="694" class="mono">is_tradeoff()</text>
+    <text x="704" y="694" class="body">IMPROVED + REGRESSED</text>
+    <text x="570" y="715" class="mono">build_*_opportunity()</text>
+    <text x="570" y="736" class="mono">needs_human_review()</text>
+  </g>
+
+  <g id="evaluation-run-schema">
+    <rect x="976" y="620" width="576" height="136" class="card"/>
+    <text x="998" y="644" class="kicker">CORE / SCHEMAS.PY</text>
+    <text x="998" y="670" class="heading">EvaluationRun</text>
+    <text x="998" y="694" class="mono">state · model_id · metadata · baseline_responses · candidate_responses</text>
+    <text x="998" y="715" class="mono">DimensionResult[] → Evidence[]</text>
+    <text x="1272" y="715" class="mono">Opportunity[] · human_review · error</text>
+    <text x="998" y="736" class="body">One audit-ready record shared by all three cases</text>
+  </g>
+
+  <path d="M520 688H548" class="flow"/>
+  <path d="M948 688H976" class="flow"/>
+
+  <!-- Terminal outputs -->
+  <g id="human-review-boundary">
+    <rect x="48" y="786" width="900" height="80" class="review"/>
+    <text x="72" y="810" class="kicker coral">HUMAN REVIEW BOUNDARY</text>
+    <text x="72" y="836" class="heading">Terminal value judgment: accept, reject, or investigate</text>
+    <text x="72" y="857" class="body">The detector surfaces what improved, what regressed, and why — it does not decide whether the update ships.</text>
+  </g>
+
+  <g id="artifact-store">
+    <rect x="976" y="786" width="576" height="80" class="artifact"/>
+    <text x="998" y="810" class="kicker">UTF-8 JSON ARTIFACTS</text>
+    <text x="998" y="836" class="heading">artifacts/runs/&lt;uuid&gt;.json</text>
+    <text x="998" y="857" class="body">Canonical Case 1 / 2 / 3 evidence · read-only restore without recomputation</text>
+  </g>
+
+  <path d="M748 756V786" class="flow-coral"/>
+  <path d="M1264 756V786" class="flow"/>
+
+  <!-- Read-only artifact feedback loop -->
+  <path d="M1552 826H1574V174H1122" class="feedback"/>
+  <rect x="1471" y="285" width="103" height="22" class="chip"/>
+  <text x="1522" y="300" text-anchor="middle" class="chip-text">READ-ONLY</text>
+
+  <text x="48" y="890" class="micro">CURRENT ARCHITECTURE · CASE 1 / CASE 2 / CASE 3 · EVIDENCE-PRESERVING ARTIFACT LOOP</text>
+  <text x="1552" y="890" text-anchor="end" class="micro">SOFT CORAL = DISCOVERED / NEEDS JUDGMENT</text>
 </svg>

@@ -31,11 +31,11 @@ This project makes those mixed outcomes visible instead of collapsing them into 
 
 ## Architecture
 
-![PROJECT 04 architecture](docs/architecture.svg)
+![PROJECT 04 architecture](docs/architecture.png)
 
-The detailed implementation map and trust boundaries are documented in [docs/architecture.md](docs/architecture.md).
+The detailed implementation map and trust boundaries are documented in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). The editable source for the diagram is [docs/architecture.svg](docs/architecture.svg).
 
-The browser provides a neutral dashboard, a Case 1 live trigger, and saved-artifact views for all three cases. FastAPI exposes evaluation/status endpoints and UUID-constrained read-only artifact endpoints. The runner connects case execution, Strands agents, deterministic evaluators, shared trade-off logic, and JSON artifact persistence.
+The browser provides a neutral dashboard, read-only canonical Demo Results for all three cases, and a credential-dependent Live Case 1 trigger. `POST /api/evaluations/run` starts Case 1 only; Case 2 and Case 3 live runs use their CLI entrypoints. FastAPI also exposes evaluation status and UUID-constrained read-only artifact endpoints. The runner connects case execution, Strands agents, deterministic evaluators, shared trade-off logic, and UTF-8 JSON artifact persistence.
 
 ## Canonical evaluation cases
 

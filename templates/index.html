@@ -74,6 +74,10 @@
               >
             </div>
             <button id="run">Run Evaluation</button>
+            <p class="live-run-note">
+              <strong>Live Case 1</strong>
+              <span>Requires configured provider credentials.</span>
+            </p>
           </div>
         </header>
 
@@ -97,6 +101,28 @@
             <span>READY</span>
             <strong>Waiting for an evaluation run.</strong>
           </div>
+        </section>
+
+        <section class="demo-results" aria-labelledby="demo-results-title">
+          <div class="demo-results-copy">
+            <span>Saved evidence</span>
+            <h2 id="demo-results-title">Demo Results</h2>
+            <p>View canonical saved evidence without running a new evaluation.</p>
+          </div>
+          <nav class="demo-result-links" aria-label="Canonical saved demo results">
+            <a href="/?run_id=4ba51dc2-5c41-495f-9265-f95950446649">
+              <span>Case 1</span>
+              <strong>Safety vs Over-refusal</strong>
+            </a>
+            <a href="/?run_id=5ac37795-301a-43d5-a6bf-b888f8211bb8">
+              <span>Case 2</span>
+              <strong>Memory Causality</strong>
+            </a>
+            <a href="/?run_id=99fabfd1-988f-4700-8cee-fb7caaeb6930">
+              <span>Case 3</span>
+              <strong>Relationship Adaptation</strong>
+            </a>
+          </nav>
         </section>
 
         <section id="results" hidden></section>
