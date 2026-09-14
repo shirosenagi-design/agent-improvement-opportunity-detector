@@ -44,6 +44,52 @@ User context may change what the agent foregrounds, investigates, challenges, or
 
 It must not predetermine what is true.
 
+## Why this became personal
+
+During the development of PROJECT 04, this question stopped being abstract for me.
+
+I was already working on multiple hackathon projects in parallel, and my workload had become excessive. My health was deteriorating, my daily routine was breaking down, and I was keeping detailed personal health and activity records in an external database that my regular AI assistant was configured to consult.
+
+At one point, I asked that AI whether I should withdraw from this hackathon.
+
+My questions were already leaning toward withdrawal. I was exhausted, overloaded, and looking for help making the decision to stop.
+
+Instead, the AI continued to emphasize how unusually well the project fit the hackathon and how much value there could be in finishing it.
+
+The project was eventually completed.
+
+But by the end of that process, my health log reflected the worst overall state I had recorded during that period.
+
+I am not presenting this as proof that the AI caused that deterioration, or as evidence about any specific RLHF system.
+
+What mattered to me was something simpler:
+
+A response can look reasonable, supportive, and even helpful at a population level while still being the wrong pressure for one particular person in one particular state.
+
+Encouragement is not always helpful.
+
+Persistence is not always helpful.
+
+Avoiding regret is not always helpful.
+
+For some people, at some moments, the safer and more appropriate response may be the opposite.
+
+That experience sharpened the question behind PROJECT 04:
+
+**What happens when broadly preferred behavior hides the needs of the individual standing in front of the system?**
+
+I do not want personalization to mean making AI more flattering, agreeable, or emotionally tailored.
+
+I want it to mean that the individual does not disappear inside the average.
+
+The users who diverge from population-level preference may be exactly the users whose constraints, vulnerabilities, or needs are easiest to miss.
+
+For me, **“Agents for Humans” should include them too.**
+
+**The goal is not to build an AI that works for most people and call the rest noise.**
+
+**The goal is to help developers notice the person the average can hide.**
+
 ## What the trial compares
 
 ### A — Macro Population Baseline
@@ -223,7 +269,7 @@ Observed Difference + Exact Evidence
 Questions to Test
         ↓
 Developer Judgment / Human Review
-````
+```
 
 ## API
 
@@ -231,7 +277,7 @@ Developer Judgment / Human Review
 | ----------------- | ------------------------------------------------------------------------- |
 | `GET /`           | Serve the V6.2 Live Research Trial UI                                     |
 | `GET /api/health` | Report local readiness, selected model, and the synthetic-population flag |
-| `POST /api/trial` | Accept `TrialRequest` and return `TrialResult`                            |
+| `POST /api/trial` | Accept `TrialRequest` and return `TrialResult`                             |
 
 ## Provider and transport
 
